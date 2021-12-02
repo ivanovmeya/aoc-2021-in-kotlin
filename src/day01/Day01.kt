@@ -1,3 +1,7 @@
+package day01
+
+import readInput
+
 fun main() {
 
     fun part1(input: List<String>): Int {
@@ -19,15 +23,15 @@ fun main() {
 
         var numberOfIncreases = 0
         val depth = input.map { it.toInt() }
-
+//        depth.windowed().zipWithNext().count { (first: Int, second: Int) -> second > first }
         var windowStart = 0
-        var windowEnd = slidingWindowSize-1
+        var windowEnd = slidingWindowSize - 1
         var previousSlidingWindowSum = depth.subList(windowStart, windowEnd).sum()
 
-        while(windowEnd < depth.size-1) {
+        while (windowEnd < depth.size - 1) {
             windowStart++
             windowEnd++
-            val currentSum = previousSlidingWindowSum - depth[windowStart-1] + depth[windowEnd]
+            val currentSum = previousSlidingWindowSum - depth[windowStart - 1] + depth[windowEnd]
             if (currentSum > previousSlidingWindowSum) numberOfIncreases++
             previousSlidingWindowSum = currentSum
         }
