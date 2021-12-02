@@ -38,7 +38,7 @@ fun main() {
         return numberOfIncreases
     }
 
-    val testInput = readInput("Day01_test")
+    val testInput = readInput("Day01_test", 1)
     val expectedPart1 = 7
     val actualPart1 = part1(testInput)
     println("test data, part1 = $actualPart1")
@@ -49,7 +49,7 @@ fun main() {
     println("test data, part2 = $actualPart2")
     check(actualPart2 == expectedPart2)
 
-    val input = readInput("Day01")
+    val input = readInput("Day01", 1)
     println("real data: part1 = ${part1(input)}")
     println("real data: part2 = ${part2(input)}")
 }
